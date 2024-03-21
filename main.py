@@ -3,7 +3,6 @@ import calculate.data
 
 app = Flask(__name__)
 
-
 @app.route('/', methods=['GET'])
 def index():
     title = "WXP | Hoop Full"
