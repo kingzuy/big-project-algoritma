@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, request
+from flask import Flask, render_template, redirect, url_for, request, jsonify
 
 app = Flask(__name__)
 
@@ -11,6 +11,11 @@ def index():
 @app.route('/calculate', methods=['GET'])
 def calculate():
     title  = "WXP | Hoop Full"
+    return render_template('calculating.html', title=title)
+
+@app.route('/data', methods=['GET'])
+def calculate():
+    
     return render_template('calculating.html', title=title)
 
 if __name__ == "__main__":

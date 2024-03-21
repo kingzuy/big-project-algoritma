@@ -1,3 +1,8 @@
+async function getdata() {
+  const response = await fetch('/data');
+  console.log(response);
+}
+
 function konsentrasi() {
     var konsentrasi = document.getElementById("konsentrasi").value
     var option = document.getElementById("konsentrasi-option")
@@ -7,3 +12,5 @@ function konsentrasi() {
         option.disabled = true
     }
 }
+
+getdata()
