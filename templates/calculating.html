@@ -104,8 +104,8 @@
                 <select
                   class="form-select"
                   aria-label="Default select example"
-                  id="konsentrasi"
-                  onchange="konsentrasi()">
+                  id="semseter"
+                  onchange="semseter()">
                   <option value="0" selected>Pilih Semester</option>
                 </select>
               </div>
@@ -115,10 +115,11 @@
                   class="form-select"
                   aria-label="Default select example"
                   id="konsentrasi-option"
+                  onchange="populateCourseInputs()"
                   disabled>
                   <option value="0" selected>Pilih Konsentrasi</option>
-                  <option value="iot">IOT</option>
-                  <option value="cyber">Cyber</option>
+                  <option value="IOT">IOT</option>
+                  <option value="Cyber Security">Cyber Security</option>
                 </select>
               </div>
             </div>

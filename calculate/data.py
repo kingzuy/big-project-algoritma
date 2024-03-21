@@ -32,21 +32,20 @@ def semester():
             {
                 "semester": "3",
                 "data": [
-                    {"Konsentrasi":[
-                        {"name":"Cyber Security",
+                    {"name": "Konsentrasi",
+                     "data" : [
+                        {"konsentrasi":"Cyber Security",
                          "data":[
-                {"name": "Keamanan Manusia & Organisasi", "sks": "2"},
-                {"name": "OS Server & Sistem Admin", "sks": "4"},
-                {"name": "Sistem Pertahanan Jaringan 1", "sks": "4"}
+                            {"name": "Keamanan Manusia & Organisasi", "sks": "2"},
+                            {"name": "OS Server & Sistem Admin", "sks": "4"},
+                            {"name": "Sistem Pertahanan Jaringan 1", "sks": "4"}
                              ]
-                             }
-                        ]},
-                    {"Konsentrasi":[
-                        {"name":"IOT",
+                             },
+                        {"konsentrasi":"IOT",
                          "data":[
-                {"name": "Elektronika dan Sistem Digital ", "sks": "4"},
-                {"name": "Edge Computing", "sks": "4"},
-                {"name": "Teknologi Sensor", "sks": "2"}
+                            {"name": "Elektronika dan Sistem Digital ", "sks": "4"},
+                            {"name": "Edge Computing", "sks": "4"},
+                            {"name": "Teknologi Sensor", "sks": "2"}
                              ]
                              }
                         ]},
@@ -59,21 +58,20 @@ def semester():
             {
                 "semester": "4",
                 "data": [
-                      {"Konsentrasi":[
-                        {"name":"Cyber Security",
+                    {"name": "Konsentrasi",
+                     "data" : [
+                        {"konsentrasi":"Cyber Security",
                          "data":[
-                    {"name": "Dasar-dasar Cybersecurity", "sks": "4"},
-                    {"name": "Kejahatan Cyber & Hukum Pidana", "sks": "2"},
-                    {"name": "Sistem Pertahanan Jaringan 2", "sks": "4"}
+                            {"name": "Dasar-dasar Cybersecurity", "sks": "4"},
+                            {"name": "Kejahatan Cyber & Hukum Pidana", "sks": "2"},
+                            {"name": "Sistem Pertahanan Jaringan 2", "sks": "4"}
                              ]
-                             }
-                        ]},
-                       {"Konsentrasi":[
-                        {"name":"IOT",
+                             },
+                        {"konsentrasi":"IOT",
                          "data":[
-                {"name": "Teknologi Deteksi Lokasi", "sks": "4"},
-                {"name": "UI/UX Design", "sks": "2"},
-                {"name": "Pemrograman Seluler", "sks": "4"}
+                            {"name": "Teknologi Deteksi Lokasi", "sks": "4"},
+                            {"name": "UI/UX Design", "sks": "2"},
+                            {"name": "Pemrograman Seluler", "sks": "4"}
                              ]
                              }
                         ]},
@@ -87,22 +85,21 @@ def semester():
             {
                 "semester": "5",
                 "data": [
-                      {"Konsentrasi":[
-                        {"name":"Cyber Security",
+                    {"name": "Konsentrasi",
+                     "data" : [
+                        {"konsentrasi":"Cyber Security",
                          "data":[
-                    {"name": "Penilaian Kerentaan Sistem", "sks": "2"},
-                    {"name": "Analisis Malware", "sks": "4"},
-                    {"name": "Ethical Hacking", "sks": "4"},
-                    {"name": "Cybersecurity Standard & Audit", "sks": "2"}
+                            {"name": "Penilaian Kerentaan Sistem", "sks": "2"},
+                            {"name": "Analisis Malware", "sks": "4"},
+                            {"name": "Ethical Hacking", "sks": "4"},
+                            {"name": "Cybersecurity Standard & Audit", "sks": "2"}
                              ]
-                             }
-                        ]},
-                      {"Konsentrasi":[
-                        {"name":"IOT",
+                             },
+                        {"konsentrasi":"IOT",
                          "data":[
-                {"name": "IoT untuk Rumah Cerdas dan Gedung", "sks": "4"},
-                {"name": "Machine Learning", "sks": "4"},
-                {"name": "IoT untuk Kota Cerdas", "sks": "4"}
+                            {"name": "IoT untuk Rumah Cerdas dan Gedung", "sks": "4"},
+                            {"name": "Machine Learning", "sks": "4"},
+                            {"name": "IoT untuk Kota Cerdas", "sks": "4"}
                              ]
                              }
                         ]},
