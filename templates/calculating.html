@@ -107,9 +107,6 @@
                   id="konsentrasi"
                   onchange="konsentrasi()">
                   <option value="0" selected>Pilih Semester</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
                 </select>
               </div>
               <div class="mb-3">
@@ -120,8 +117,8 @@
                   id="konsentrasi-option"
                   disabled>
                   <option value="0" selected>Pilih Konsentrasi</option>
-                  <option value="semester-1">IOT</option>
-                  <option value="semester-2">Cyber</option>
+                  <option value="iot">IOT</option>
+                  <option value="cyber">Cyber</option>
                 </select>
               </div>
             </div>
@@ -129,16 +126,11 @@
             <!-- Start nilai mahasiswa -->
             <div class="col-lg-6 pt-4 pt-lg-0">
               <p>Input Nilai :</p>
-              <div id="semester-1">
-                <p>ini semester 1</p>
-              </div>
-              <div id="semester-2">
-                <p>ini semester 2</p>
-              </div>
-              <div id="semester-3">
-                <p>ini semester 3</p>
+              <div class="mb-3" id="courseInputs">
+                <!-- Course inputs will be dynamically added here -->
               </div>
             </div>
+
             <!-- End data mahasiswa -->
           </div>
         </div>

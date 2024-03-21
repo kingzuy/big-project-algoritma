@@ -1,5 +1,6 @@
-from flask import Flask, render_template, redirect, url_for, request, json
-import calculate.data
+from flask import Flask, render_template, redirect, url_for, request
+import json
+import calculate.data as modul
 
 app = Flask(__name__)
 
@@ -15,12 +16,9 @@ def calculate():
 
 @app.route('/data', methods=['GET'])
 def data():
-    response = app.response_class(
-        response=json.dumps(calculate.data.data()),
-        status=200,
-        mimetype='application/json'
-    )
-    return response
-    
+    data = modul.semester()
+    json_data = json.dumps(data, indent=4)
+    return json_data
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8000, debug=True)

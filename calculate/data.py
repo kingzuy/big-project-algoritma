@@ -1,4 +1,4 @@
-def data():
+def semester():
     data = {
         "status": "success",
         "data": [
@@ -113,9 +113,7 @@ def data():
                 ]
             }
         ]
-    }
+    }    
     return data
 
-# Example usage:
-course_data = data()
-print(course_data)
+# Testing the function
