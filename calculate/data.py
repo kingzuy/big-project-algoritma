@@ -43,7 +43,7 @@ def semester():
                              },
                         {"konsentrasi":"IOT",
                          "data":[
-                            {"name": "Elektronika dan Sistem Digital ", "sks": "4"},
+                            {"name": "Elektronika dan Sistem Digital", "sks": "4"},
                             {"name": "Edge Computing", "sks": "4"},
                             {"name": "Teknologi Sensor", "sks": "2"}
                              ]

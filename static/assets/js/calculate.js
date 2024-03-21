@@ -64,16 +64,18 @@ async function populateCourseInputs() {
                             if (konsentrasiObject) {
                                 const consentrationData = konsentrasiObject.data.find(item => item.konsentrasi === consentrationOption)
                                 consentrationData.data.forEach(course => { 
+                                    const courseId = course.name.replace(/\s+/g, '_'); // Replace spaces with underscore
                                     // Create label for course name
                                     const courseLabel = document.createElement('label')
-                                    courseLabel.setAttribute('for', course.name)
+                                    courseLabel.setAttribute('for', courseId)
                                     courseLabel.textContent = `${course.name} (${course.sks})`
                 
                                     // Create input field for entering grade
                                     const gradeInput = document.createElement('input')
                                     gradeInput.setAttribute('type', 'text')
                                     gradeInput.setAttribute('class', 'form-control')
-                                    gradeInput.setAttribute('id', course.name)
+                                    gradeInput.setAttribute('id', courseId)
+                                    gradeInput.setAttribute('name', courseId)
                                     gradeInput.setAttribute('placeholder', 'Enter grade')
                 
                                     // Create div to contain label and input field
@@ -88,16 +90,18 @@ async function populateCourseInputs() {
                             }
                         }
                     } else {
+                        const courseId = course.name.replace(/\s+/g, '_'); // Replace spaces with underscore
                         // Create label for course name
                         const courseLabel = document.createElement('label')
-                        courseLabel.setAttribute('for', course.name)
+                        courseLabel.setAttribute('for', courseId)
                         courseLabel.textContent = `${course.name} (${course.sks})`
     
                         // Create input field for entering grade
                         const gradeInput = document.createElement('input')
                         gradeInput.setAttribute('type', 'text')
                         gradeInput.setAttribute('class', 'form-control')
-                        gradeInput.setAttribute('id', course.name)
+                        gradeInput.setAttribute('id', courseId)
+                        gradeInput.setAttribute('name', courseId)
                         gradeInput.setAttribute('placeholder', 'Enter grade')
     
                         // Create div to contain label and input field
@@ -113,14 +117,16 @@ async function populateCourseInputs() {
             }
         } else {
             selectedSemesterData.data.forEach(course => {
+                const courseId = course.name.replace(/\s+/g, '_'); // Replace spaces with underscore
                 const courseLabel = document.createElement('label')
-                courseLabel.setAttribute('for', course.name)
+                courseLabel.setAttribute('for', courseId)
                 courseLabel.textContent = `${course.name} (${course.sks})`
     
                 const courseInput = document.createElement('input')
                 courseInput.setAttribute('type', 'text')
                 courseInput.setAttribute('class', 'form-control')
-                courseInput.setAttribute('id', course.name)
+                courseInput.setAttribute('id', courseId)
+                courseInput.setAttribute('name', courseId)
     
                 const courseDiv = document.createElement('div')
                 courseDiv.setAttribute('class', 'mb-3')
