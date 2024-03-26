@@ -144,6 +144,41 @@ async function populateCourseInputs() {
     }
 }
 
+function autoFormatNIM(input) {
+  var value = input.value;
+  var originalLength = value.length;
+  var caretPosition = input.selectionStart;
+
+  value = value.replace(/[^0-9]/g, ''); // Hapus semua karakter non-angka
+  var parts = [];
+
+  // Bagi string menjadi bagian 23.83.1040
+  if (value.length > 2) {
+    parts.push(value.substring(0, 2));
+    if (value.length > 4) {
+      parts.push(value.substring(2, 4));
+      if (value.length > 8) {
+        parts.push(value.substring(4, 8));
+      } else {
+        parts.push(value.substring(4));
+      }
+    } else {
+      parts.push(value.substring(2));
+    }
+  } else {
+    parts.push(value);
+  }
+
+  // Gabungkan bagian dengan titik
+  input.value = parts.join('.');
+
+  // Atur kembali posisi kursor
+  if (originalLength < input.value.length) {
+    caretPosition++;
+  }
+  input.setSelectionRange(caretPosition, caretPosition);
+}
+
 // Call the function to populate course inputs when the semester select is changed
 document.getElementById('semseter').addEventListener('change', populateCourseInputs)
 
@@ -151,3 +186,4 @@ document.getElementById('semseter').addEventListener('change', populateCourseInp
 populateCourseInputs()
 semseter()
 getdata()
+formatnim()
