@@ -15,6 +15,12 @@ def calculate():
     title  = "WXP | Hoop Full"
     return render_template('calculating.html', title=title)
 
+@app.route('/calculate', methods=['POST'])
+def calculate_post():
+    data = request.form
+    json_data = json.dumps(data, indent=4)
+    return json_data
+
 @app.route('/data', methods=['GET'])
 def data():
     data = modul.semester()

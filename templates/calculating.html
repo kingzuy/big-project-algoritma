@@ -75,66 +75,126 @@
 
     <!-- ======= Hero Section ======= -->
 
-    <main id="main" class="mt-5">
+    <main id="main">
+      <!-- ======= Breadcrumbs ======= -->
+      <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li>Calculate</li>
+          </ol>
+        </div>
+      </section>
+      <!-- End Breadcrumbs -->
+
       <!-- ======= About Us Section ======= -->
-      <section id="about" class="about mt-5">
+      <section id="about" class="about">
         <div class="container" data-aos="fade-up">
-          <div class="section-title">
-            <h2>Calculate</h2>
+          <div class="container">
+            <h2>CALCULATE</h2>
           </div>
-
-          <div class="row content">
-            <!-- start data mahasiswa -->
-            <div class="col-lg-6">
-              <p>Data Mahasiswa :</p>
-              <div class="mb-3">
-                <label for="name" class="form-label">Nama</label>
-                <input type="text" class="form-control" id="name" />
+          <!-- Form -->
+          <form action="calculate" method="POST">
+            <div class="row content">
+              <!-- start data mahasiswa -->
+              <div class="col-lg-6">
+                <p>Data Mahasiswa :</p>
+                <div class="mb-3">
+                  <label for="name" class="form-label">Nama</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    name="nama" />
+                </div>
+                <div class="mb-3">
+                  <label for="nim" class="form-label">NIM</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nim"
+                    name="nim"
+                    oninput="autoFormatNIM(this)"
+                    placeholder="xx.xx.xxxx" />
+                </div>
+                <div class="mb-3">
+                  <label for="semester" class="form-label">Semester</label>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    id="semseter"
+                    name="semseter"
+                    onchange="semseter()">
+                    <option value="0" selected>Pilih Semester</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="semester" class="form-label">Konsentrasi</label>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    id="konsentrasi-option"
+                    name="konsentrasi"
+                    onchange="populateCourseInputs()"
+                    disabled>
+                    <option value="0" selected>Pilih Konsentrasi</option>
+                    <option value="IOT">IOT</option>
+                    <option value="Cyber Security">Cyber Security</option>
+                  </select>
+                </div>
               </div>
-              <div class="mb-3">
-                <label for="nim" class="form-label">NIM</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nim"
-                  oninput="autoFormatNIM(this)"
-                  placeholder="xx.xx.xxxx" />
+              <!-- End data mahasiswa -->
+              <!-- Start nilai mahasiswa -->
+              <div class="col-lg-6 pt-4 pt-lg-0">
+                <p>Input Nilai :</p>
+                <div class="mb-3" id="courseInputs">
+                  <!-- Course inputs will be dynamically added here -->
+                </div>
               </div>
-              <div class="mb-3">
-                <label for="semester" class="form-label">Semester</label>
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  id="semseter"
-                  onchange="semseter()">
-                  <option value="0" selected>Pilih Semester</option>
-                </select>
-              </div>
-              <div class="mb-3">
-                <label for="semester" class="form-label">Konsentrasi</label>
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  id="konsentrasi-option"
-                  onchange="populateCourseInputs()"
-                  disabled>
-                  <option value="0" selected>Pilih Konsentrasi</option>
-                  <option value="IOT">IOT</option>
-                  <option value="Cyber Security">Cyber Security</option>
-                </select>
-              </div>
+              <!-- End data mahasiswa -->
             </div>
-            <!-- End data mahasiswa -->
-            <!-- Start nilai mahasiswa -->
-            <div class="col-lg-6 pt-4 pt-lg-0">
-              <p>Input Nilai :</p>
-              <div class="mb-3" id="courseInputs">
-                <!-- Course inputs will be dynamically added here -->
-              </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <button
+                class="me-md-2"
+                type="reset"
+                style="
+                  top: 0;
+                  right: 0;
+                  bottom: 0;
+                  border: 0;
+                  background: none;
+                  font-size: 16px;
+                  padding: 3px 20px;
+                  background: #47b2e4;
+                  color: #fff;
+                  transition: 0.3s;
+                  border-radius: 50px;
+                  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+                ">
+                Reset
+              </button>
+              <button
+                style="
+                  top: 0;
+                  right: 0;
+                  bottom: 0;
+                  border: 0;
+                  background: none;
+                  font-size: 16px;
+                  padding: 0 20px;
+                  background: #47b2e4;
+                  color: #fff;
+                  transition: 0.3s;
+                  border-radius: 50px;
+                  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+                "
+                type="submit">
+                Submit
+              </button>
             </div>
+          </form>
 
-            <!-- End data mahasiswa -->
-          </div>
+          <!-- End Form -->
         </div>
       </section>
       <!-- End About Us Section -->
