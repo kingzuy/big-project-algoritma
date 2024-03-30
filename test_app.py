@@ -9,19 +9,10 @@ app.secret_key = 'your_secret_key_here'
 @app.route('/', methods=['GET'])
 def index():
     title = "WXP | Hoop Full"
-    return render_template('index.html', title=title)
-
-@app.route('/calculate', methods=['GET'])
-def calculate():
-    title  = "WXP | Hoop Full"
     return render_template('calculating.html', title=title)
 
 @app.route('/calculate', methods=['POST'])
 def calculate_post():
-    # data = request.form
-    # json_data = json.dumps(data, indent=4)
-    # return json_data
-
     data = request.form
 
     data_mata_kuliah = {}
@@ -35,13 +26,9 @@ def calculate_post():
         "semester": data.get("semester", "")
     }
 
-    session['data'] = ([data_mahasiswa, data_mata_kuliah])
-    return redirect(url_for('result'))
+    return ([data_mahasiswa, data_mata_kuliah])
 
-@app.route('/result', methods=['GET'])
-def result():
-    data = session.get('data', None)
-    return render_template('result.html', data=data)
+
 
 @app.route('/data', methods=['GET'])
 def data():

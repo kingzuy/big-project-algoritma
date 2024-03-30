@@ -2,7 +2,7 @@ async function getdata() {
     const response = await fetch('/data')
     const data = await response.json()
     const semesters = data.data
-    const selectElement = document.getElementById('semseter')
+    const selectElement = document.getElementById('semester')
 
     // Clear existing options
     selectElement.innerHTML = '<option value="0" selected>Pilih Semester</option>'
@@ -16,10 +16,10 @@ async function getdata() {
     })
 }
 
-async function semseter() {
-    var semseter = document.getElementById("semseter").value
+async function semester() {
+    var semester = document.getElementById("semester").value
     var option = document.getElementById("konsentrasi-option")
-    if (Number(semseter) >= 3) {
+    if (Number(semester) >= 3) {
         option.disabled = false
     } else {
         option.disabled = true
@@ -29,10 +29,10 @@ async function semseter() {
 async function populateCourseInputs() {
     const response = await fetch('/data')
     const data = await response.json()
-    const semesterSelect = document.getElementById('semseter')
+    const semesterSelect = document.getElementById('semester')
     const courseInputsDiv = document.getElementById('courseInputs')
     const consentrationOption = document.getElementById("konsentrasi-option").value
-    
+
     // Clear existing input fields
     courseInputsDiv.innerHTML = ''
 
@@ -44,7 +44,7 @@ async function populateCourseInputs() {
 
     // If semester data is found, create input fields for each course
     if (selectedSemesterData) {
-        
+
         if (Number(selectedSemester) >= 3 && Number(selectedSemester) <=5) {
             if (consentrationOption == "0") {
                 // If no data found for selected konsentrasi, display a message
@@ -63,13 +63,13 @@ async function populateCourseInputs() {
                             // If konsentrasi object is found, push its data to the konsentrasiData array
                             if (konsentrasiObject) {
                                 const consentrationData = konsentrasiObject.data.find(item => item.konsentrasi === consentrationOption)
-                                consentrationData.data.forEach(course => { 
+                                consentrationData.data.forEach(course => {
                                     const courseId = course.name.replace(/\s+/g, '_'); // Replace spaces with underscore
                                     // Create label for course name
                                     const courseLabel = document.createElement('label')
                                     courseLabel.setAttribute('for', courseId)
                                     courseLabel.textContent = `${course.name} (${course.sks})`
-                
+
                                     // Create input field for entering grade
                                     const gradeInput = document.createElement('input')
                                     gradeInput.setAttribute('type', 'text')
@@ -77,13 +77,13 @@ async function populateCourseInputs() {
                                     gradeInput.setAttribute('id', courseId)
                                     gradeInput.setAttribute('name', courseId)
                                     gradeInput.setAttribute('placeholder', 'Enter grade')
-                
+
                                     // Create div to contain label and input field
                                     const courseDiv = document.createElement('div')
                                     courseDiv.setAttribute('class', 'mb-3')
                                     courseDiv.appendChild(courseLabel)
                                     courseDiv.appendChild(gradeInput)
-                
+
                                     // Append course div to the container
                                     courseInputsDiv.appendChild(courseDiv)
                                 })
@@ -95,7 +95,7 @@ async function populateCourseInputs() {
                         const courseLabel = document.createElement('label')
                         courseLabel.setAttribute('for', courseId)
                         courseLabel.textContent = `${course.name} (${course.sks})`
-    
+
                         // Create input field for entering grade
                         const gradeInput = document.createElement('input')
                         gradeInput.setAttribute('type', 'text')
@@ -103,13 +103,13 @@ async function populateCourseInputs() {
                         gradeInput.setAttribute('id', courseId)
                         gradeInput.setAttribute('name', courseId)
                         gradeInput.setAttribute('placeholder', 'Enter grade')
-    
+
                         // Create div to contain label and input field
                         const courseDiv = document.createElement('div')
                         courseDiv.setAttribute('class', 'mb-3')
                         courseDiv.appendChild(courseLabel)
                         courseDiv.appendChild(gradeInput)
-    
+
                         // Append course div to the container
                         courseInputsDiv.appendChild(courseDiv)
                     }
@@ -121,18 +121,18 @@ async function populateCourseInputs() {
                 const courseLabel = document.createElement('label')
                 courseLabel.setAttribute('for', courseId)
                 courseLabel.textContent = `${course.name} (${course.sks})`
-    
+
                 const courseInput = document.createElement('input')
                 courseInput.setAttribute('type', 'text')
                 courseInput.setAttribute('class', 'form-control')
                 courseInput.setAttribute('id', courseId)
                 courseInput.setAttribute('name', courseId)
-    
+
                 const courseDiv = document.createElement('div')
                 courseDiv.setAttribute('class', 'mb-3')
                 courseDiv.appendChild(courseLabel)
                 courseDiv.appendChild(courseInput)
-    
+
                 courseInputsDiv.appendChild(courseDiv)
             })
         }
@@ -180,10 +180,10 @@ function autoFormatNIM(input) {
 }
 
 // Call the function to populate course inputs when the semester select is changed
-document.getElementById('semseter').addEventListener('change', populateCourseInputs)
+document.getElementById('semester').addEventListener('change', populateCourseInputs)
 
 // Populate course inputs on page load
 populateCourseInputs()
-semseter()
+semester()
 getdata()
 formatnim()
