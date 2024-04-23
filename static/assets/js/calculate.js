@@ -45,7 +45,7 @@ async function populateCourseInputs() {
     // If semester data is found, create input fields for each course
     if (selectedSemesterData) {
 
-        if (Number(selectedSemester) >= 3 && Number(selectedSemester) <=5) {
+        if (Number(selectedSemester) >= 3 && Number(selectedSemester) <= 5) {
             if (consentrationOption == "0") {
                 // If no data found for selected konsentrasi, display a message
                 const message = document.createElement('p')
@@ -77,6 +77,18 @@ async function populateCourseInputs() {
                                     gradeInput.setAttribute('id', courseId)
                                     gradeInput.setAttribute('name', courseId)
                                     gradeInput.setAttribute('placeholder', 'Enter grade')
+                                    gradeInput.setAttribute('required', '')
+
+
+                                    gradeInput.addEventListener('input', function () {
+                                        const validGrades = ['a', 'b', 'c', 'd', 'e'];
+                                        const inputValue = this.value.toLowerCase(); // Convert input to lowercase for case-insensitive matching
+                                        if (!validGrades.includes(inputValue)) {
+                                            this.setCustomValidity('Please enter a valid grade (a, b, c, d, or e).')
+                                        } else {
+                                            this.setCustomValidity('')
+                                        }
+                                    })
 
                                     // Create div to contain label and input field
                                     const courseDiv = document.createElement('div')
@@ -103,6 +115,18 @@ async function populateCourseInputs() {
                         gradeInput.setAttribute('id', courseId)
                         gradeInput.setAttribute('name', courseId)
                         gradeInput.setAttribute('placeholder', 'Enter grade')
+                        gradeInput.setAttribute('required', 'true')
+
+
+                        gradeInput.addEventListener('input', function () {
+                            const validGrades = ['a', 'b', 'c', 'd', 'e'];
+                            const inputValue = this.value.toLowerCase(); // Convert input to lowercase for case-insensitive matching
+                            if (!validGrades.includes(inputValue)) {
+                                this.setCustomValidity('Please enter a valid grade (a, b, c, d, or e).')
+                            } else {
+                                this.setCustomValidity('')
+                            }
+                        })
 
                         // Create div to contain label and input field
                         const courseDiv = document.createElement('div')
@@ -127,6 +151,17 @@ async function populateCourseInputs() {
                 courseInput.setAttribute('class', 'form-control')
                 courseInput.setAttribute('id', courseId)
                 courseInput.setAttribute('name', courseId)
+                courseInput.setAttribute('required', 'true')
+
+                courseInput.addEventListener('input', function () {
+                    const validGrades = ['a', 'b', 'c', 'd', 'e'];
+                    const inputValue = this.value.toLowerCase(); // Convert input to lowercase for case-insensitive matching
+                    if (!validGrades.includes(inputValue)) {
+                        this.setCustomValidity('Please enter a valid grade (a, b, c, d, or e).')
+                    } else {
+                        this.setCustomValidity('')
+                    }
+                })
 
                 const courseDiv = document.createElement('div')
                 courseDiv.setAttribute('class', 'mb-3')
@@ -145,38 +180,38 @@ async function populateCourseInputs() {
 }
 
 function autoFormatNIM(input) {
-  var value = input.value;
-  var originalLength = value.length;
-  var caretPosition = input.selectionStart;
+    var value = input.value;
+    var originalLength = value.length;
+    var caretPosition = input.selectionStart;
 
-  value = value.replace(/[^0-9]/g, ''); // Hapus semua karakter non-angka
-  var parts = [];
+    value = value.replace(/[^0-9]/g, ''); // Hapus semua karakter non-angka
+    var parts = [];
 
-  // Bagi string menjadi bagian 23.83.1040
-  if (value.length > 2) {
-    parts.push(value.substring(0, 2));
-    if (value.length > 4) {
-      parts.push(value.substring(2, 4));
-      if (value.length > 8) {
-        parts.push(value.substring(4, 8));
-      } else {
-        parts.push(value.substring(4));
-      }
+    // Bagi string menjadi bagian 23.83.1040
+    if (value.length > 2) {
+        parts.push(value.substring(0, 2));
+        if (value.length > 4) {
+            parts.push(value.substring(2, 4));
+            if (value.length > 8) {
+                parts.push(value.substring(4, 8));
+            } else {
+                parts.push(value.substring(4));
+            }
+        } else {
+            parts.push(value.substring(2));
+        }
     } else {
-      parts.push(value.substring(2));
+        parts.push(value);
     }
-  } else {
-    parts.push(value);
-  }
 
-  // Gabungkan bagian dengan titik
-  input.value = parts.join('.');
+    // Gabungkan bagian dengan titik
+    input.value = parts.join('.');
 
-  // Atur kembali posisi kursor
-  if (originalLength < input.value.length) {
-    caretPosition++;
-  }
-  input.setSelectionRange(caretPosition, caretPosition);
+    // Atur kembali posisi kursor
+    if (originalLength < input.value.length) {
+        caretPosition++;
+    }
+    input.setSelectionRange(caretPosition, caretPosition);
 }
 
 // Call the function to populate course inputs when the semester select is changed

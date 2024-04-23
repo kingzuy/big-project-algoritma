@@ -74,11 +74,11 @@
                 <p>Data Mahasiswa :</p>
                 <div class="mb-3">
                   <label for="name" class="form-label">Nama</label>
-                  <input type="text" class="form-control" id="name" name="nama" />
+                  <input type="text" class="form-control" id="name" name="nama" required/>
                 </div>
                 <div class="mb-3">
                   <label for="nim" class="form-label">NIM</label>
-                  <input type="text" class="form-control" id="nim" name="nim" oninput="autoFormatNIM(this)" placeholder="xx.xx.xxxx" />
+                  <input type="text" class="form-control" id="nim" name="nim" oninput="autoFormatNIM(this)" placeholder="xx.xx.xxxx" required/>
                 </div>
                 <div class="mb-3">
                   <label for="semester" class="form-label">Semester</label>
@@ -88,7 +88,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="semester" class="form-label">Konsentrasi</label>
-                  <select class="form-select" aria-label="Default select example" id="konsentrasi-option" name="konsentrasi" onchange="populateCourseInputs()" disabled>
+                  <select class="form-select" aria-label="Default select example" id="konsentrasi-option" name="Konsentrasi" onchange="populateCourseInputs()" disabled>
                     <option value="0" selected>Pilih Konsentrasi</option>
                     <option value="IOT">IOT</option>
                     <option value="Cyber Security">Cyber Security</option>
@@ -105,9 +105,9 @@
               </div>
               <!-- End data mahasiswa -->
             </div>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-              <button class="me-md-2" type="reset" style="top: 0; right: 0; bottom: 0; border: 0; background: none; font-size: 16px; padding: 3px 20px; background: #47b2e4; color: #fff; transition: 0.3s; border-radius: 50px; box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1)">Reset</button>
-              <button style="top: 0; right: 0; bottom: 0; border: 0; background: none; font-size: 16px; padding: 0 20px; background: #47b2e4; color: #fff; transition: 0.3s; border-radius: 50px; box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1)" type="submit">Submit</button>
+            <div class="d-grid gap-1 d-md-flex justify-content-md-end">
+              <button class="me-md-2" type="reset" style="top: 0; right: 0; bottom: 0; border: 0; background: none; font-size: 16px; padding: 8px 20px; border: 1px solid #47b2e4; color: #47b2e4; background: transparent; transition: 0.3s; border-radius: 50px">Reset</button>
+              <button style="top: 0; right: 0; bottom: 0; border: 0; background: none; font-size: 16px; padding: 8px 20px; background: #47b2e4; color: #fff; transition: 0.3s; border-radius: 50px; box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1)" type="submit">Submit</button>
             </div>
           </form>
 
@@ -189,8 +189,8 @@
                 </div>
                 <div class="member-info">
                   <h4>Zulfi Rahmad Fathoni</h4>
-                  <span>Penyembah</span>
-                  <p>" Info Takjil Kang !! "</p>
+                  <span>Penyembah Ulti Nolan</span>
+                  <p>" Mclarren lu warna apa boss? "</p>
                   <div class="social">
                     <a href=""><i class="ri-twitter-fill"></i></a>
                     <a href=""><i class="ri-facebook-fill"></i></a>
