@@ -16,7 +16,7 @@ async function getdata() {
     })
 }
 
-async function semester() {
+async function cekSemester() {
     var semester = document.getElementById("semester").value
     var option = document.getElementById("konsentrasi-option")
     if (Number(semester) >= 3) {
@@ -219,6 +219,6 @@ document.getElementById('semester').addEventListener('change', populateCourseInp
 
 // Populate course inputs on page load
 populateCourseInputs()
-semester()
+cekSemester()
 getdata()
 formatnim()
