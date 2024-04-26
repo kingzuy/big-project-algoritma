@@ -69,7 +69,7 @@
           </div>
 
           <div class="row">
-            <div class="" data-aos="zoom-in" data-aos-delay="100">
+            <div data-aos="zoom-in" data-aos-delay="100">
               <div class="member d-flex align-items-start">
                 <div class="pic">
                   <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="" />
@@ -87,16 +87,15 @@
       <!-- ======= About Us Section ======= -->
       <section id="about" class="about">
         <div class="container" data-aos="fade-up">
-          <h2>Result</h2>
+          <h2>Mata Kuliah</h2>
           <!-- Result -->
-
           <ol class="list-group list-group-numbered">
             {% for key, value in data[1].items() %}
-            <li class="list-group-item d-flex justify-content-between align-items-start">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
               <div class="ms-2 me-auto">
-                <div class="fw-bold">{{ key }}</div>
+                <span>{{ key.replace('_', ' ') }}</span>
               </div>
-              <h4><span class="badge text-bg-primary rounded-pill">{{ value }}</span></h4>
+              <span class="badge text-bg-primary rounded-pill text-uppercase fs-4">{{ value }}</span>
             </li>
             {% endfor %}
           </ol>

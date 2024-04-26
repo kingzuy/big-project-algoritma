@@ -41,7 +41,16 @@ def calculate_post():
 @app.route('/result', methods=['GET'])
 def result():
     data = session.get('data', None)
-    return render_template('result.html', data=data)
+    # Menyusun data yang diubah
+    personal_info = data[0]
+    academic_info = data[1]
+
+    # Memindahkan 'Konsentrasi' ke dalam dictionary personal_info
+    personal_info['Konsentrasi'] = academic_info.pop('Konsentrasi', '')
+
+    # Hasil akhir
+    processed_data = [personal_info, academic_info]
+    return render_template('result.html', data=processed_data)
 
 @app.route('/data', methods=['GET'])
 def data():

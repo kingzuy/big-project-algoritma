@@ -76,7 +76,7 @@ async function populateCourseInputs() {
                                     gradeInput.setAttribute('class', 'form-control')
                                     gradeInput.setAttribute('id', courseId)
                                     gradeInput.setAttribute('name', courseId)
-                                    gradeInput.setAttribute('placeholder', 'Enter grade')
+                                    gradeInput.setAttribute('placeholder', 'Masukkan nilai antara A sampai E')
                                     gradeInput.setAttribute('required', '')
 
 
@@ -114,7 +114,7 @@ async function populateCourseInputs() {
                         gradeInput.setAttribute('class', 'form-control')
                         gradeInput.setAttribute('id', courseId)
                         gradeInput.setAttribute('name', courseId)
-                        gradeInput.setAttribute('placeholder', 'Enter grade')
+                        gradeInput.setAttribute('placeholder', 'Masukkan nilai antara A sampai E')
                         gradeInput.setAttribute('required', 'true')
 
 
@@ -151,6 +151,7 @@ async function populateCourseInputs() {
                 courseInput.setAttribute('class', 'form-control')
                 courseInput.setAttribute('id', courseId)
                 courseInput.setAttribute('name', courseId)
+                courseInput.setAttribute('placeholder', 'Masukkan nilai antara A sampai E')
                 courseInput.setAttribute('required', 'true')
 
                 courseInput.addEventListener('input', function () {
