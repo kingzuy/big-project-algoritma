@@ -3,6 +3,11 @@ Mata Kuliah Algoritma dan Struktur Data
 
 ## How to running code?
 
+Create virtual environment
+```python
+$ pip3 install python3-venv
+```
+
 1. Create virtual environment
 ```python
 $ python -m venv venv
