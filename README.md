@@ -5,7 +5,7 @@ Mata Kuliah Algoritma dan Struktur Data
 
 Create virtual environment
 ```python
-$ pip3 install python3-venv
+$ pip3 install virtualenv
 ```
 
 1. Create virtual environment
