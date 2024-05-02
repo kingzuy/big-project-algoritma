@@ -79,6 +79,13 @@ async function populateCourseInputs() {
                                     gradeInput.setAttribute('placeholder', 'Masukkan nilai antara A sampai E')
                                     gradeInput.setAttribute('required', '')
 
+                                    // Create input field for entering grade
+                                    const gradeSks = document.createElement('input')
+                                    gradeSks.setAttribute('type', 'text')
+                                    gradeSks.setAttribute('name', `sks${course.name}`)
+                                    gradeSks.setAttribute('value', `${course.sks}`)
+                                    gradeSks.setAttribute('hidden', `true`)
+
 
                                     gradeInput.addEventListener('input', function () {
                                         const validGrades = ['a', 'b', 'c', 'd', 'e'];
@@ -95,6 +102,7 @@ async function populateCourseInputs() {
                                     courseDiv.setAttribute('class', 'mb-3')
                                     courseDiv.appendChild(courseLabel)
                                     courseDiv.appendChild(gradeInput)
+                                    courseDiv.appendChild(gradeSks)
 
                                     // Append course div to the container
                                     courseInputsDiv.appendChild(courseDiv)
@@ -117,6 +125,13 @@ async function populateCourseInputs() {
                         gradeInput.setAttribute('placeholder', 'Masukkan nilai antara A sampai E')
                         gradeInput.setAttribute('required', 'true')
 
+                        // Create input field for entering grade
+                        const gradeSks = document.createElement('input')
+                        gradeSks.setAttribute('type', 'text')
+                        gradeSks.setAttribute('name', `sks${course.name}`)
+                        gradeSks.setAttribute('value', `${course.sks}`)
+                        gradeSks.setAttribute('hidden', `true`)
+
 
                         gradeInput.addEventListener('input', function () {
                             const validGrades = ['a', 'b', 'c', 'd', 'e'];
@@ -133,6 +148,7 @@ async function populateCourseInputs() {
                         courseDiv.setAttribute('class', 'mb-3')
                         courseDiv.appendChild(courseLabel)
                         courseDiv.appendChild(gradeInput)
+                        courseDiv.appendChild(gradeSks)
 
                         // Append course div to the container
                         courseInputsDiv.appendChild(courseDiv)
@@ -154,6 +170,13 @@ async function populateCourseInputs() {
                 courseInput.setAttribute('placeholder', 'Masukkan nilai antara A sampai E')
                 courseInput.setAttribute('required', 'true')
 
+                // Create input field for entering grade
+                const gradeSks = document.createElement('input')
+                gradeSks.setAttribute('type', 'text')
+                gradeSks.setAttribute('name', `sks${course.name}`)
+                gradeSks.setAttribute('value', `${course.sks}`)
+                gradeSks.setAttribute('hidden', `true`)
+
                 courseInput.addEventListener('input', function () {
                     const validGrades = ['a', 'b', 'c', 'd', 'e'];
                     const inputValue = this.value.toLowerCase(); // Convert input to lowercase for case-insensitive matching
@@ -168,6 +191,7 @@ async function populateCourseInputs() {
                 courseDiv.setAttribute('class', 'mb-3')
                 courseDiv.appendChild(courseLabel)
                 courseDiv.appendChild(courseInput)
+                courseDiv.appendChild(gradeSks)
 
                 courseInputsDiv.appendChild(courseDiv)
             })

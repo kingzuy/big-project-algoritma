@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect, session, url_for, request
 import json
-import calculate.calculate as calc
+# import calculate.calculate as calc
 import calculate.data as modul
 
 app = Flask(__name__)

@@ -36,13 +36,13 @@ def semester():
                     {"name": "Konsentrasi",
                      "data": [
                          {"konsentrasi": "Cyber Security",
-                          "data": [
-                            {"name": "Keamanan Manusia & Organisasi", "sks": "2"},
-                            {"name": "OS Server & Sistem Admin", "sks": "4"},
-                            {"name": "Sistem Pertahanan Jaringan 1", "sks": "4"}
-                          ]
+                            "data": [
+                                {"name": "Keamanan Manusia & Organisasi", "sks": "2"},
+                                {"name": "OS Server & Sistem Admin", "sks": "4"},
+                                {"name": "Sistem Pertahanan Jaringan 1", "sks": "4"}
+                            ]
                           },
-                         {"konsentrasi": "IOT",
+                         {"konsentrasi": "Internet of Things",
                              "data": [
                                  {"name": "Elektronika dan Sistem Digital", "sks": "4"},
                                  {"name": "Edge Computing", "sks": "4"},
@@ -68,7 +68,7 @@ def semester():
                             {"name": "Sistem Pertahanan Jaringan 2", "sks": "4"}
                           ]
                           },
-                         {"konsentrasi": "IOT",
+                         {"konsentrasi": "Internet of Things",
                              "data": [
                                  {"name": "Teknologi Deteksi Lokasi", "sks": "4"},
                                  {"name": "UI/UX Design", "sks": "2"},
@@ -96,7 +96,7 @@ def semester():
                             {"name": "Cybersecurity Standard & Audit", "sks": "2"}
                           ]
                           },
-                         {"konsentrasi": "IOT",
+                         {"konsentrasi": "Internet of Things",
                              "data": [
                                  {"name": "IoT untuk Rumah Cerdas dan Gedung",
                                      "sks": "4"},

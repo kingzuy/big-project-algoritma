@@ -78,6 +78,7 @@
                   <h4>Nama: {{ data[0].nama }}</h4>
                   <span>Nim: {{ data[0].nim }}</span>
                   <p>Semester: {{ data[0].semester }}</p>
+                  {{data}}
                 </div>
               </div>
             </div>
@@ -87,17 +88,19 @@
       <!-- ======= About Us Section ======= -->
       <section id="about" class="about">
         <div class="container" data-aos="fade-up">
-          <h2>Mata Kuliah</h2>
+          <h2>Mata Kuliah{{ " : " + data[0].Konsentrasi if data[0].Konsentrasi else " " }}</h2>
           <!-- Result -->
           <ol class="list-group list-group-numbered">
             {% for key, value in data[1].items() %}
+            {% if not key.startswith('sks') %}
             <li class="list-group-item d-flex justify-content-between align-items-center">
               <div class="ms-2 me-auto">
                 <span>{{ key.replace('_', ' ') }}</span>
               </div>
               <span class="badge text-bg-primary rounded-pill text-uppercase fs-4">{{ value }}</span>
+              <span class="badge text-bg-primary rounded-pill text-uppercase fs-4">{{ value }}</span>
             </li>
-            {% endfor %}
+            {% endif %} {% endfor %}
           </ol>
           <!-- End Result -->
         </div>
