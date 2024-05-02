@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
@@ -15,97 +15,97 @@
 
     <link href="{{ url_for('static',filename='assets/vendor/aos/aos.css') }}" rel="stylesheet" />
     <link href="{{ url_for('static',filename='assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
-    <link href="{{ url_for('static',filename='assets/vendor/bootstrap-icons/bootstrap-icons.cs') }}s" rel="stylesheet" />
+    <link href="{{ url_for('static',filename='assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet" />
     <link href="{{ url_for('static',filename='assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet" />
     <link href="{{ url_for('static',filename='assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet" />
     <link href="{{ url_for('static',filename='assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet" />
     <link href="{{ url_for('static',filename='assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet" />
 
     <link href="{{ url_for('static',filename='assets/css/style.css') }}" rel="stylesheet" />
-  </head>
+</head>
 
-  <body>
+<body>
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top" style="background: rgba(40, 58, 90, 0.9)">
-      <div class="container d-flex align-items-center">
-        <h1 class="logo me-auto"><a href="index.html">WXP</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        <div class="container d-flex align-items-center">
+            <h1 class="logo me-auto"><a href="index.html">WXP</a></h1>
 
-        <nav id="navbar" class="navbar">
-          <ul>
-            <li><a class="nav-link scrollto" href="/">Home</a></li>
-            <li><a class="nav-link scrollto" href="/">About</a></li>
-            <li><a class="nav-link scrollto" href="/">Team</a></li>
-            <li>
-              <a class="nav-link scrollto active" href="/calculate">Calculate</a>
-            </li>
-          </ul>
-          <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav>
-        <!-- .navbar -->
-      </div>
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto" href="/">Home</a></li>
+                    <li><a class="nav-link scrollto" href="/">About</a></li>
+                    <li><a class="nav-link scrollto" href="/">Team</a></li>
+                    <li><a class="nav-link scrollto active" href="/calculate">Calculate</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+        </div>
     </header>
     <!-- End Header -->
 
     <!-- ======= Hero Section ======= -->
 
     <main id="main">
-      <!-- ======= Breadcrumbs ======= -->
-      <section id="breadcrumbs" class="breadcrumbs">
-        <div class="container">
-          <ol>
-            <li><a href="/">Home</a></li>
-            <li>Result</li>
-          </ol>
-        </div>
-      </section>
-      <!-- End Breadcrumbs -->
-      <section id="team" class="team section-bg">
-        <div class="container" data-aos="fade-up">
-          <div class="section-title">
-            <h2>Hasil Perhitungan IPK</h2>
-            <p>Penghitungan Indeks Prestasi Kumulatif (IPK) mahasiswa teknik komputer selama periode akademik tertentu.</p>
-          </div>
-
-          <div class="row">
-            <div data-aos="zoom-in" data-aos-delay="100">
-              <div class="member d-flex align-items-start">
-                <div class="pic">
-                  <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="" />
-                </div>
-                <div class="member-info">
-                  <h4>Nama: {{ data[0].nama }}</h4>
-                  <span>Nim: {{ data[0].nim }}</span>
-                  <p>Semester: {{ data[0].semester }}</p>
-                  {{data}}
-                </div>
-              </div>
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="/">Home</a></li>
+                    <li>Result</li>
+                </ol>
             </div>
-          </div>
-        </div>
-      </section>
-      <!-- ======= About Us Section ======= -->
-      <section id="about" class="about">
-        <div class="container" data-aos="fade-up">
-          <h2>Mata Kuliah{{ " : " + data[0].Konsentrasi if data[0].Konsentrasi else " " }}</h2>
-          <!-- Result -->
-          <ol class="list-group list-group-numbered">
-            {% for key, value in data[1].items() %}
-            {% if not key.startswith('sks') %}
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <div class="ms-2 me-auto">
-                <span>{{ key.replace('_', ' ') }}</span>
-              </div>
-              <span class="badge text-bg-primary rounded-pill text-uppercase fs-4">{{ value }}</span>
-              <span class="badge text-bg-primary rounded-pill text-uppercase fs-4">{{ value }}</span>
-            </li>
-            {% endif %} {% endfor %}
-          </ol>
-          <!-- End Result -->
-        </div>
-      </section>
-      <!-- End About Us Section -->
+        </section>
+        <!-- End Breadcrumbs -->
+        <section id="team" class="team section-bg">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Hasil Perhitungan IPK</h2>
+                    <p>Penghitungan Indeks Prestasi Kumulatif (IPK) mahasiswa teknik komputer selama periode akademik tertentu.</p>
+                </div>
+
+                <div class="row">
+                    <div data-aos="zoom-in" data-aos-delay="100">
+                        <div class="member d-flex align-items-start">
+                            <div class="pic">
+                                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="" />
+                            </div>
+                            <div class="member-info">
+                                <h4>Nama: {{ data[0].nama }}</h4>
+                                <span>Nim: {{ data[0].nim }}</span>
+                                <p>Semester: {{ data[0].semester }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ======= About Us Section ======= -->
+        <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
+                <h2>Mata Kuliah{{ " : " + data[0].Konsentrasi if data[0].Konsentrasi else " " }}</h2>
+                <!-- Result -->
+                <ol class="list-group list-group-numbered">
+                    {{data}}
+                    {% for key, value in data[1].items() %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div class="ms-2 me-auto">
+                            <span>{{ key.replace('_', ' ') }}</span>
+                        </div>
+                        <span class="badge text-bg-primary rounded-pill text-uppercase fs-4" data-value="{{ value }}">{{ value }}</span>
+                    </li>
+                    {% endfor %}
+                </ol>
+                <!-- End Result -->
+            </div>
+
+            <!-- Tambahkan elemen untuk menampilkan hasil perhitungan IPK -->
+            <div class="container" data-aos="fade-up">
+                <h2>Hasil Perhitungan IPK</h2>
+                <div>Total IPK: <span id="total_ipk"></span></div>
+                <div>Rata-rata IPK: <span id="rata_rata_ipk"></span></div>
+            </div>
+        </section>
+        <!-- End About Us Section -->
     </main>
     <!-- End #main -->
 
@@ -124,5 +124,47 @@
     <!-- Template Main JS File -->
     <script src="{{ url_for('static',filename='assets/js/main.js') }}"></script>
     <script src="{{ url_for('static',filename='assets/js/calculate.js') }}"></script>
-  </body>
+
+    <script>
+        // Fungsi untuk mengonversi nilai huruf menjadi IPK
+        function nilaiKeIPK(nilai) {
+            if (nilai === 'a') {
+                return 4;
+            } else if (nilai === 'b') {
+                return 3;
+            } else if (nilai === 'c') {
+                return 2;
+            } else if (nilai === 'd') {
+                return 1;
+            } else if (nilai === 'e') {
+                return 0;
+            } else {
+                return 0; // Nilai tidak valid
+            }
+        }
+
+        // Mendapatkan semua elemen yang memuat nilai IPK
+        var nilaiIPKs = document.querySelectorAll('.list-group-item span');
+
+        // Menghitung total IPK
+        var totalIPK = 0;
+        nilaiIPKs.forEach(function(nilaiIPK) {
+            var nilai = nilaiIPK.getAttribute('data-value');
+            totalIPK += nilaiKeIPK(nilai);
+        });
+
+        // Menghitung rata-rata IPK
+        var jumlahMataKuliah = nilaiIPKs.length;
+        var rataRataIPK = totalIPK / jumlahMataKuliah;
+
+        // Menampilkan total IPK dan rata-rata IPK
+        var totalIPKElement = document.createElement('span');
+        totalIPKElement.textContent = totalIPK.toFixed(2);
+        document.getElementById('total_ipk').appendChild(totalIPKElement);
+
+        var rataRataIPKElement = document.createElement('span');
+        rataRataIPKElement.textContent = rataRataIPK.toFixed(2);
+        document.getElementById('rata_rata_ipk').appendChild(rataRataIPKElement);
+    </script>
+</body>
 </html>

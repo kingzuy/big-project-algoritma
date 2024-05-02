@@ -102,7 +102,7 @@ async function populateCourseInputs() {
                                     courseDiv.setAttribute('class', 'mb-3')
                                     courseDiv.appendChild(courseLabel)
                                     courseDiv.appendChild(gradeInput)
-                                    courseDiv.appendChild(gradeSks)
+                                    // courseDiv.appendChild(gradeSks)
 
                                     // Append course div to the container
                                     courseInputsDiv.appendChild(courseDiv)
@@ -148,7 +148,7 @@ async function populateCourseInputs() {
                         courseDiv.setAttribute('class', 'mb-3')
                         courseDiv.appendChild(courseLabel)
                         courseDiv.appendChild(gradeInput)
-                        courseDiv.appendChild(gradeSks)
+                        // courseDiv.appendChild(gradeSks)
 
                         // Append course div to the container
                         courseInputsDiv.appendChild(courseDiv)
@@ -191,7 +191,7 @@ async function populateCourseInputs() {
                 courseDiv.setAttribute('class', 'mb-3')
                 courseDiv.appendChild(courseLabel)
                 courseDiv.appendChild(courseInput)
-                courseDiv.appendChild(gradeSks)
+                // courseDiv.appendChild(gradeSks)
 
                 courseInputsDiv.appendChild(courseDiv)
             })
