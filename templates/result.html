@@ -73,6 +73,9 @@
                                 <h4>Nama: {{ data[0].nama }}</h4>
                                 <span>Nim: {{ data[0].nim }}</span>
                                 <p>Semester: {{ data[0].semester }}</p>
+                                {% if data[0].konsentrasi %}
+                                <p>Konsentrasi: {{ data[0].konsentrasi }}</p>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -85,7 +88,7 @@
                 <h2>Mata Kuliah{{ " : " + data[0].Konsentrasi if data[0].Konsentrasi else " " }}</h2>
                 <!-- Result -->
                 <ol class="list-group list-group-numbered">
-                    {{data}}
+                    {{data[1]}}
                     {% for key, value in data[1].items() %}
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         <div class="ms-2 me-auto">
@@ -99,11 +102,27 @@
             </div>
 
             <!-- Tambahkan elemen untuk menampilkan hasil perhitungan IPK -->
-            <div class="container" data-aos="fade-up">
+            <div class="container mt-5" data-aos="fade-up">
                 <h2>Hasil Perhitungan IPK</h2>
-                <div>Total IPK: <span id="total_ipk"></span></div>
-                <div>Rata-rata IPK: <span id="rata_rata_ipk"></span></div>
+                <table>
+                    <tr>
+                      <td>Total SKS</td>
+                      <td>:</td>
+                      <td>{{ data[2]['total_sks'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>Total IPK</td>
+                      <td>:</td>
+                      <td>{{ data[2]['total_ipk'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>Rata-Rata</td>
+                      <td>:</td>
+                      <td>{{ data[2]['rata_rata'] }}</td>
+                    </tr>
+                  </table>
             </div>
+            
         </section>
         <!-- End About Us Section -->
     </main>

@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect, session, url_for, request
 import json
-# import calculate.calculate as calc
 import calculate.data as modul
+from calc import ipk as sum_ipk
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key_here'
@@ -32,7 +32,7 @@ def calculate_post():
     data_mahasiswa = {
         "nama": data.get("nama", ""),
         "nim": data.get("nim", ""),
-        "semester": data.get("semester", "")
+        "semester": data.get("semester", ""),
     }
 
     session['data'] = ([data_mahasiswa, data_mata_kuliah])
@@ -49,7 +49,9 @@ def result():
     personal_info['Konsentrasi'] = academic_info.pop('Konsentrasi', '')
 
     # Hasil akhir
-    processed_data = [personal_info, academic_info]
+    ipk = sum_ipk(personal_info,academic_info)
+    processed_data = [personal_info, academic_info, ipk]
+    
     return render_template('result.html', data=processed_data)
 
 @app.route('/data', methods=['GET'])
@@ -58,11 +60,5 @@ def data():
     json_data = json.dumps(data, indent=4)
     return json_data
 
-@app.route('/test', methods=['GET'])
-def test():
-    data = calc.test()
-    json_data = json.dumps(data, indent=4)
-    return json_data
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8000, debug=True)
+if __name__ == '__main__':
+    app.run(host="0.0.0.0", port=8000, debug=True, use_reloader=False)
